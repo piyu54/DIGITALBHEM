@@ -4,19 +4,18 @@ import java.util.Scanner;
 public class Deposit 
 
 {
-	 private static double balance = 100000;   
-	 public void depositMoney() 
+	 public  void depositMoney() 
 	 {
 	        Scanner scanner = new Scanner(System.in);
-	        System.out.print("Enter the amount to deposit: ");
-	        double amount = scanner.nextDouble();
-
-	        if (amount > 0) {
-	            balance += amount;
-	            System.out.println("Deposit successful. New balance: " + balance);
-	        } else {
-	            System.out.println("Invalid deposit amount. Please enter a positive value.");
-	        }
+	        System.out.print("Enter the amount to Deposit: ");
+	        int dcash=scanner.nextInt();
+	        ATM.updatebalance(dcash);
+	        ATM.history.add(Integer.toString(dcash));
+	        ATM.history.add("Deposit");
+	        System.out.println("Amount Rs."+dcash+"/- Deposit Successful!");
+	        System.out.println("Update Balance is "+ATM.getBalance());
+	        System.out.println("---------------------------");
+	       
 	    }	
 }
 	  
